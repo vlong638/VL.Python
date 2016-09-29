@@ -1,0 +1,147 @@
+import PrintHelper
+PrintHelper.PrintTitle('Recapsulation')
+print('回顾一下关于字符串的操作')
+print('首先是字符串可以使用+,*进行运算')
+print('其次前几章介绍了关于字符创的格式化方法format(),长度检测方法len()')
+print('字符串可以使用循环语句如for')
+PrintHelper.PrintCode('a="123"')
+a="123"
+PrintHelper.PrintCode('b="444"')
+b="444"
+PrintHelper.PrintCode('print(a+b)')
+print(a+b)
+PrintHelper.PrintCode('print(a*3)')
+print(a*3)
+PrintHelper.PrintCode('print("{1:*>20}{0:->20}".format(a,b))')
+print("{1:*>20}{0:->20}".format(a,b))
+PrintHelper.PrintCode('print("{0:*^20}{1:->20}".format(a,b))')
+print("{0:*^20}{1:->20}".format(a,b))
+PrintHelper.PrintCode('print("{1:*<20}{0:->20}".format(a,b))')
+print("{1:*<20}{0:->20}".format(a,b))
+PrintHelper.PrintCode('for letter in a:')
+PrintHelper.PrintCode('    if letter=="1":')
+PrintHelper.PrintCode('        print(letter*6)')
+for letter in a:
+    if letter=="1":
+        print(letter*6)
+
+PrintHelper.PrintTitle('Multi-line Strings')
+PrintHelper.PrintCode('multilineString1=\"line1\\')
+PrintHelper.PrintCode('line2\\')
+PrintHelper.PrintCode('line3\"')
+multilineString1="line1\
+line2\
+line3"
+PrintHelper.PrintCode('print(multilineString1)')
+print(multilineString1)
+PrintHelper.PrintCode('multilineString2=\"\"\"line1')
+PrintHelper.PrintCode('line2')
+PrintHelper.PrintCode('line3\"\"\"')
+multilineString2="""line1
+line2
+line3"""
+PrintHelper.PrintCode('print(multilineString2)')
+print(multilineString2)
+PrintHelper.PrintCode('multilineString3=\'\'\'line1')
+PrintHelper.PrintCode('line2')
+PrintHelper.PrintCode('line3\'\'\'')
+multilineString3='''line1
+line2
+line3'''
+PrintHelper.PrintCode('print(multilineString3)')
+print(multilineString3)
+
+PrintHelper.PrintTitle('Escape Sequences')
+print('本章提到的一些转义符')
+print('\\n 换行')
+print('\\\' 直接输出\'')
+print('\\\" 直接输出\"')
+print('\\\\ 直接输出\\')
+print('\\t 用以表现单表')
+print('int(\"0xnn\",16) 则用以表现十六进制数,之所以在此记录是因为,书中描述是\\xnn')
+PrintHelper.PrintCode('print(\"a\\nb\")')
+print("a\nb")
+PrintHelper.PrintCode('print(\"\\\'\")')
+print("\'")
+PrintHelper.PrintCode('print(\"\\\"\")')
+print("\"")
+PrintHelper.PrintCode('print(\"\\\\\")')
+print("\\")
+PrintHelper.PrintCode('print(\"a\\tb\")')
+print("a\tb")
+PrintHelper.PrintCode('print(int(\"0x01\",16) )')
+print(int("0x01",16) )
+PrintHelper.PrintCode('print(int(\"0x11\",16) )')
+print(int("0x11",16) )
+
+PrintHelper.PrintTitle('Accessing Characters Of A String')
+PrintHelper.PrintSubtitle('String indices')
+print('可以使用索引访问字符串中的字符')
+PrintHelper.PrintCode('charString=\"123\"')
+charString="123"
+PrintHelper.PrintCode('print(charString[0])')
+print(charString[0])
+PrintHelper.PrintCode('print(charString[-1])')
+print(charString[-1])
+PrintHelper.PrintSubtitle('Traversing strings')
+print('可以使用循环语句遍历字符串中的字符')
+PrintHelper.PrintCode('for letter in charString:')
+PrintHelper.PrintCode('    print(letter)')
+for letter in charString:
+    print(letter)
+PrintHelper.PrintSubtitle('Extended slices')
+print('@string[@startItem::@span]')
+PrintHelper.PrintCode('fruit = \"banana\"')
+fruit = "banana"
+PrintHelper.PrintCode('print( fruit[::1] )')
+print( fruit[::1] )
+PrintHelper.PrintCode('print( fruit[::2] )')
+print( fruit[::2] )
+PrintHelper.PrintCode('print( fruit[::3] )')
+print( fruit[::3] )
+PrintHelper.PrintCode('print( fruit[1::2] )')
+print( fruit[1::2] )
+PrintHelper.PrintCode('print( fruit[::-1] )')
+print( fruit[::-1] )
+PrintHelper.PrintCode('print( fruit[::-2] )')
+print( fruit[::-2] )
+
+PrintHelper.PrintTitle('Strings are immutable')
+print('字符串的字符是不能局部更改的')
+print('string[1]=\"a\"会引发异常')
+
+PrintHelper.PrintTitle('string methods')
+PrintHelper.PrintSampleWithDescription('strip()','移除两端的空格')
+PrintHelper.PrintSampleWithDescription('upper() and lower()','大小写切换')
+PrintHelper.PrintSampleWithDescription('find(@value)','找到@value的起始位置,找不到时返回-1')
+PrintHelper.PrintSampleWithDescription('replace(@oldValue,@newValue)','替换值')
+PrintHelper.PrintSampleWithDescription('split(@splitBy)','按照值拆分字符串')
+PrintHelper.PrintSampleWithDescription('join()','组合多个字符串')
+
+PrintHelper.PrintTitle('Character encoding')
+print('ASCII码,这是一种7位编码,支持128种字符.')
+print('现在很多系统使用Unicode,它支持远远更多的字符,常见的有UTF-8')
+print('Python默认的编码格式是UTF-8')
+PrintHelper.PrintCode('print(ord(\'A\'))')
+print(ord('A'))
+PrintHelper.PrintCode('print(ord(\'a\'))')
+print(ord('a'))
+PrintHelper.PrintCode('print(chr(65))')
+print(chr(65))
+PrintHelper.PrintCode('print(chr(97))')
+print(chr(97))
+PrintHelper.PrintCode('print(\"orange\"<\"ordinal\")')
+print("orange"<"ordinal")
+PrintHelper.PrintCode('alpha=\"\\u0391\"')
+alpha="\u0391"
+PrintHelper.PrintCode('print(ord(alpha))')
+print(ord(alpha))
+PrintHelper.PrintCode('print(chr(ord(alpha)))')
+print(chr(ord(alpha)))
+PrintHelper.PrintCode('for i in range(25):')
+PrintHelper.PrintCode('    print(chr(ord(alpha)+1),end=\"\")')
+for i in range(25):
+    print(chr(ord(alpha)+1),end="")
+
+
+

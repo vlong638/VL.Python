@@ -1,0 +1,22 @@
+from pcinput import getInteger,getFloat,getString,getLetter
+titlePattern=":-^80"
+contentPattern=":20"
+print(("{"+titlePattern+"}").format("Functions"))
+print(("{"+contentPattern+"}").format("getInteger()"))
+print(("{"+contentPattern+"}").format("getFloat()"))
+print(("{"+contentPattern+"}").format("getString()"))
+print(("{"+contentPattern+"}").format("getLetter()"))
+print(("{"+titlePattern+"}").format("Samples"))
+print(("{"+contentPattern+"}").format("those are samples provided by author of pythonbook.pdf, and i have changed same logic of them"))
+print(("{"+contentPattern+"}").format("getInteger()"))
+i=getInteger()
+print(("{"+contentPattern+"}").format("value input is "),i)
+print(("{"+contentPattern+"}").format("getFloat()"))
+f=getFloat()
+print(("{"+contentPattern+"}").format("value input is "),f)
+print(("{"+contentPattern+"}").format("getString()"))
+s=getString()
+print(("{"+contentPattern+"}").format("value input is "),s)
+print(("{"+contentPattern+"}").format("getLetter()"))
+l=getLetter()
+print(("{"+contentPattern+"}").format("value input is "),l)

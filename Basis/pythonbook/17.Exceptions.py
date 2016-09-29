@@ -1,0 +1,48 @@
+import PrintHelper
+PrintHelper.PrintSubtitle('Errors And Exceptions')
+PrintHelper.PrintHint('try...except')
+print('try:')
+print('    <statements>')
+print('except:')
+print('    <exception handling>')
+PrintHelper.PrintSubtitle('Handling Specific Exceptions')
+PrintHelper.PrintCode('def ExceptionTest(text):')
+PrintHelper.PrintCode('    try:')
+PrintHelper.PrintCode('        if text==\"a\":')
+PrintHelper.PrintCode('            print(3/int(text))')
+PrintHelper.PrintCode('        else:')
+PrintHelper.PrintCode('            print(3/int(text))')
+PrintHelper.PrintCode('    except ZeroDivisionError:')
+PrintHelper.PrintCode('        print(\"Dividing by zero is not allowed\")')
+PrintHelper.PrintCode('    except ValueError:')
+PrintHelper.PrintCode('        print(\"You have not entered an integer\")')
+PrintHelper.PrintCode('    except:')
+PrintHelper.PrintCode('        print(\"Other exceptions\")')
+def ExceptionTest(text):
+    try:
+        if text=="a":
+            print(3/text)
+        else:
+            print(3/int(text))
+    except ZeroDivisionError:
+        print("Dividing by zero is not allowed")
+    except ValueError:
+        print("You have not entered an integer")
+    except:
+        print("Other exceptions")
+PrintHelper.PrintCode('ExceptionTest(1)')
+ExceptionTest(1)
+PrintHelper.PrintCode('ExceptionTest(0)')
+ExceptionTest(0)
+PrintHelper.PrintCode('ExceptionTest(\"a\")')
+ExceptionTest("a")
+PrintHelper.PrintCode('ExceptionTest(\"aa\")')
+ExceptionTest("aa")
+PrintHelper.PrintSubtitle('List Of Some Specific Exceptions')
+PrintHelper.PrintSampleWithDescription('ZeroDivisionError','试图除以0')
+PrintHelper.PrintSampleWithDescription('IndexError','访问tuple或list时超过边界')
+PrintHelper.PrintSampleWithDescription('KeyError','使用未知的key访问dictionary')
+PrintHelper.PrintSampleWithDescription('IOError','任何访问文件时的异常')
+PrintHelper.PrintSampleWithDescription('FileNotFoundError','尝试打开不存在的文件时触发的异常')
+PrintHelper.PrintSampleWithDescription('ValueError','类型转换时发生的异常')
+PrintHelper.PrintSampleWithDescription('TypeError','操作一个不支持方法的值类型')
