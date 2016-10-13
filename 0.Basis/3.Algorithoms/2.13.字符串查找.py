@@ -1,22 +1,4 @@
 import PrintHelper
-PrintHelper.PrintCode('class Solution:')
-PrintHelper.PrintCode('    def strStr(self, source, target):')
-PrintHelper.PrintCode('        if(len(source)==0 or len(target)==0):')
-PrintHelper.PrintCode('            return -1')
-PrintHelper.PrintCode('        i=0')
-PrintHelper.PrintCode('        while i<len(source):')
-PrintHelper.PrintCode('            j=0')
-PrintHelper.PrintCode('            while j<len(target):')
-PrintHelper.PrintCode('                if source[i+j]==target[j]:')
-PrintHelper.PrintCode('                    print(\"source\",source[i+j])')
-PrintHelper.PrintCode('                    print(\"target\",target[j])')
-PrintHelper.PrintCode('                    j+=1')
-PrintHelper.PrintCode('                    if j==(len(target)):')
-PrintHelper.PrintCode('                        return i')
-PrintHelper.PrintCode('                else:')
-PrintHelper.PrintCode('                    break;')
-PrintHelper.PrintCode('            i+=1')
-PrintHelper.PrintCode('        return -1')
 class Solution:
     def strStr(self, source, target):
         if(len(source)==0 or len(target)==0):
@@ -35,6 +17,13 @@ class Solution:
                     break;
             i+=1
         return -1
+
+s=Solution()
+result= s.strStr("","")
+print(type(result))
+print(result)
+
+
 PrintHelper.PrintCode('s=Solution()')
 s=Solution()
 PrintHelper.PrintCode('a=\"abcd123456789\"')
