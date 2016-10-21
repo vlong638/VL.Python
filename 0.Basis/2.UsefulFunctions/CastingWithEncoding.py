@@ -36,3 +36,8 @@ PrintHelper.PrintCode('print(s)')
 print(s)
 PrintHelper.PrintCode('print(s.decode(\"utf-8\"))')
 print(s.decode("utf-8"))
+s="Python".encode("ascii")
+for letter in s:
+    print(letter)
+print(s)
+print(s.decode("ascii"))

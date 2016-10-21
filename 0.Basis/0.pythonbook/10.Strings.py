@@ -112,6 +112,7 @@ print('string[1]=\"a\"会引发异常')
 
 PrintHelper.PrintTitle('string methods')
 PrintHelper.PrintSampleWithDescription('strip()','移除两端的空格')
+PrintHelper.PrintSampleWithDescription('lstrip(),rstrip()','移除左or右的空格')
 PrintHelper.PrintSampleWithDescription('upper() and lower()','大小写切换')
 PrintHelper.PrintSampleWithDescription('find(@value)','找到@value的起始位置,找不到时返回-1')
 PrintHelper.PrintSampleWithDescription('replace(@oldValue,@newValue)','替换值')

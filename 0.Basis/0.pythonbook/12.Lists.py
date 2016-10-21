@@ -101,6 +101,10 @@ PrintHelper.PrintCode('t.insert(1,\"watermelon\")')
 t.insert(1,"watermelon")
 PrintHelper.PrintCode('print(t)')
 print(t)
+PrintHelper.PrintCode('t.insert(len(t),"tt")')
+t.insert(len(t),"tt")
+PrintHelper.PrintCode('print(t)')
+print(t)
 PrintHelper.PrintSubtitle('remove')
 PrintHelper.PrintCode('t=[\"apple\",\"banana\",\"orange\"]')
 t=["apple","banana","orange"]
@@ -160,7 +164,7 @@ print( fruitlist )
 PrintHelper.PrintCode('print( newfruitlist )')
 print( newfruitlist )
 PrintHelper.PrintSubtitle('Shallow vs. deep copies')
-PrintHelper.PrintSubtitle('Shallow')
+PrintHelper.PrintSubtitle('Shallow,浅复制的引用部分是相互关联的,即[]内的[],或者新增项')
 PrintHelper.PrintCode('a=[\"apple\",[1,2,3]]')
 a=["apple",[1,2,3]]
 PrintHelper.PrintCode('b=a[:]')
@@ -173,7 +177,7 @@ PrintHelper.PrintCode('print(a)')
 print(a)
 PrintHelper.PrintCode('print(b)')
 print(b)
-PrintHelper.PrintSubtitle('deep copies')
+PrintHelper.PrintSubtitle('deep copies,深复制则是全新对象')
 PrintHelper.PrintCode('a=[\"apple\",[1,2,3]]')
 a=["apple",[1,2,3]]
 PrintHelper.PrintCode('b=deepcopy(a)')
@@ -228,3 +232,10 @@ tripleList=[(x,y,z)
             if z!=4
             ]
 print(tripleList)
+PrintHelper.PrintHint('@string.join(@list)')
+PrintHelper.PrintCode('sl=[str(x*x) for x in range(1,5)]')
+PrintHelper.PrintCode('print(\",\".join(sl))')
+sl=[str(x*x) for x in range(1,5)]
+print(",".join(sl))
+
+
