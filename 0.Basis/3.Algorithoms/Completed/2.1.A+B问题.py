@@ -23,33 +23,37 @@ PrintHelper.PrintCode('     print(\"{:5}{:>10}\".format(\"a+b\",bin(a+b)))')
 PrintHelper.PrintCode('     print(\"{:5}{:>10}\".format(\"a&b\",bin(a&b)))')
 PrintHelper.PrintCode('     print(\"{:5}{:>10}\".format(\"a|b\",bin(a|b)))')
 PrintHelper.PrintCode('     print(\"{:5}{:>10}\".format(\"a^b\",bin(a^b)))')
-class Solution:
- """
- @param a: The first integer
- @param b: The second integer
- @return: The sum of a and b
- """
- def aplusb(self, a, b):
-     if a==0:
-         return b
-     if b==0:
-         return a
-     c=a^b
-     d=(a&b)<<1;
-     print("a     ","{:>10}".format(bin(a)))
-     print("b     ","{:>10}".format(bin(b)))
-     print("a^b   ","{:>10}".format(bin(c)))
-     print("a&b<<1","{:>10}".format(bin(d)))
-     print()
-     return self.aplusb(c,d)
+
     
- def DisplayAB(self, a, b):
-     print("{:5}{:>10}".format("a",bin(a)))
-     print("{:5}{:>10}".format("b",bin(b)))
-     print("{:5}{:>10}".format("a+b",bin(a+b)))
-     print("{:5}{:>10}".format("a&b",bin(a&b)))
-     print("{:5}{:>10}".format("a|b",bin(a|b)))
-     print("{:5}{:>10}".format("a^b",bin(a^b)))
+"""
+@param a: The first integer
+@param b: The second integer
+@return: The sum of a and b
+"""
+class Solution:
+    def aplusb(self, a, b):
+        if a==0:
+            return b
+        if b==0:
+            return a
+        c=a^b
+        d=(a&b)<<1;
+        if c==-2**32:
+            return 0
+        print("a     ","{:>10}".format(bin(a)))
+        print("b     ","{:>10}".format(bin(b)))
+        print("a^b   ","{:>10}".format(bin(c)))
+        print("a&b<<1","{:>10}".format(bin(d)))
+        print()
+        return self.aplusb(c,d)
+    
+    def DisplayAB(self, a, b):
+        print("{:5}{:>10}".format("a",bin(a)))
+        print("{:5}{:>10}".format("b",bin(b)))
+        print("{:5}{:>10}".format("a+b",bin(a+b)))
+        print("{:5}{:>10}".format("a&b",bin(a&b)))
+        print("{:5}{:>10}".format("a|b",bin(a|b)))
+        print("{:5}{:>10}".format("a^b",bin(a^b)))
 
 print('bin(integer)获取二进制表示')
 PrintHelper.PrintCode('a=11')
@@ -86,3 +90,4 @@ print('作一个简单例子11和01,差异部分10,进位部分为01<<1,即10')
 print('差异和进位依旧是两个值')
 print('继续重复差异和进位处理,直到某部分为0')
 print(s.aplusb(43,57))
+print(s.aplusb(100,-100))

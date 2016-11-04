@@ -35,11 +35,12 @@ class Solution:
         if a>=0 and b>=0:
             pass
         elif a>0:
+            #求反码两种方式之一
             b-=1
-            b=~b
-            length=len(bin(b))-2
-            b+=2**31-2**length
+            b=(2**31-1)^b
+            b=-b
         elif b>0:
+            #求反码两种方式之二
             a-=1
             a=~a
             length=len(bin(a))-2
@@ -85,7 +86,7 @@ class Solution:
 s=Solution()
 result= s.bitSwapRequired(14,31)
 print(result)
-result= s.bitSwapRequired(-1,1)
+result= s.bitSwapRequired(1,-1)
 print(result)
 result= s.bitSwapRequired(-2147483648, 2147483647)
 print(result)

@@ -15,19 +15,18 @@ class Solution:
         curSum=0
         curArray=[]
         for num in nums:
+            if curSum<0:
+                curSum=0
             curSum+=num
             curArray.append(num)
             if curSum>maxSum:
                 maxSum=curSum
                 maxArray=curArray
-            elif curSum<0:
-                curSum=0
-                curArray=[]
         return maxSum,maxArray
                 
         
 s=Solution()
-resultSum,resultArray= s.maxSubArray([-2,2,-3,4,-1,2,1,-5,3])
+resultSum,resultArray= s.maxSubArray([-2,2,-3,4,-1,2,1,-5,3,-2,2,-3,4,-1,2,1,-5,3])
 
 print(resultSum)
 for num in resultArray:

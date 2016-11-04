@@ -9,3 +9,10 @@ PrintHelper.PrintHint('@hour=@datetime.hour')
 PrintHelper.PrintHint('@minute=@datetime.minute')
 PrintHelper.PrintHint('@second=@datetime.second')
 PrintHelper.PrintHint('@microsecond=@datetime.microsecond')
+
+import datetime
+t1=datetime.datetime.now()
+print("t1",t1)
+t2=datetime.datetime.now()
+print("t2",t2)
+print("span",t2-t1)

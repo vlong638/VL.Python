@@ -14,7 +14,7 @@ class Solution:
         index=int((start+end)/2)
         if nums[index]==target:
             print("find it,at index:",index)
-            while index>1 and nums[index-1]==target:
+            while index>0 and index>=start and nums[index-1]==target:
                 print("move forward")
                 index-=1
             print("return",index)

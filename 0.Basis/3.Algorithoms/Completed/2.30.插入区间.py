@@ -19,35 +19,27 @@ class Solution:
         if len(newInterval)==0:
             return intervals;
         result=[]
-        currentInterval=intervals.pop(0)
-        while currentInterval!=None:
-            if newInterval[1]<currentInterval[0]:
-                print("带插入区间的最大值小于原有的当前区间")
-                print("append",newInterval)
+        #add newInterval or intervals
+        while len(intervals)>0:
+            if newInterval[1]<intervals[0][0]:
                 result.append(newInterval)
                 newInterval=None
+                #print("result.append(newInterval)")
                 break
-            elif newInterval[0]>currentInterval[1]:
-                print("带插入区间的最小值大于原有的当前区间")
-                print("append",currentInterval)
-                result.append(currentInterval)
+            elif newInterval[0]>intervals[0][1]:
+                result.append(intervals.pop(0))
+                #print("result.append(intervals.pop(0))")
             else:
-                print("带插入区间与原有的当前区间存在交集,进行合并")
-                newInterval=self.merge(currentInterval,newInterval)
-                print("newInterval merge",newInterval)
-            if len(intervals)!=0:
-                 currentInterval=intervals.pop(0)
-            else:
-                 currentInterval=None
-        if len(newInterval)>0:
-            print("补入剩余的带插入区间")
-            print("append",newInterval)
-            result.append(newInterval)
+                newInterval=self.merge(intervals.pop(0),newInterval)
+                #print("merge")
+        #add intervals
         if len(intervals)>0:
-            print("补入剩余的原有区间")
-            print("append",intervals)
-            result.append(intervals)
+            result.extend(intervals)
+        #add newInterval
+        if newInterval!=None:
+            result.append(newInterval)
         return result
+    
     def merge(self, intervalA, intervalB):
         return [min(intervalA[0],intervalB[0]),max(intervalA[1],intervalB[1])]
             
@@ -55,5 +47,13 @@ class Solution:
         
 s=Solution()
 result= s.insert([[1,5], [6,8]], [5,6])
-print(type(result))
 print(result)
+
+result= s.insert([[1,5]], [2,3])
+print(result)
+
+result= s.insert([[1,5]], [0,0])
+print(result)
+
+
+

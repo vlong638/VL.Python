@@ -19,9 +19,10 @@ class Solution:
             return head
         if head.next.next==None:
             print("only two node, reverse it")
-            head.next.next=head
+            next=head.next
             head.next=None
-            return head
+            next.next=head
+            return next
         else:
             current=head.next
             next=head.next.next
@@ -53,6 +54,12 @@ class Solution:
 
 
 head=ListNode(11,ListNode(222,ListNode(333,ListNode(4444,ListNode(555)))))
+s=Solution()
+s.display(head)
+result= s.reverse(head)
+s.display(result)
+
+head=ListNode(11,ListNode(222))
 s=Solution()
 s.display(head)
 result= s.reverse(head)

@@ -6,7 +6,7 @@ class Solution:
         i=0
         while i<len(source):
             j=0
-            while j<len(target):
+            while j<len(target) and i+j<len(source):
                 if source[i+j]==target[j]:
                     print("source",source[i+j])
                     print("target",target[j])

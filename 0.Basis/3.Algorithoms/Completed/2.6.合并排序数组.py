@@ -5,6 +5,26 @@ class Solution:
     def mergeSortedArray(self, A, B):
         # write your code here
         c=[]
+        while len(A)>0:
+            if len(B)==0:
+                break
+            elif A[len(A)-1]>B[len(B)-1]:
+                c.append(A.pop())
+            else:
+                c.append(B.pop())
+        while len(A)>0:
+            c.append(A.pop())
+        while len(B)>0:
+            c.append(B.pop())
+        result=[]
+        while len(c)>0:
+            result.append(c.pop())
+        return result
+
+            
+    def mergeSortedArray2(self, A, B):
+        # write your code here
+        c=[]
         a=None
         b=None
         while len(A)>0:
@@ -42,4 +62,7 @@ PrintHelper.PrintCode('c=s.mergeSortedArray([1,2,3,3,4,5],[1,4,5,7])')
 PrintHelper.PrintCode('print(c)')
 s=Solution()
 c=s.mergeSortedArray([1,2,3,3,4,5],[1,4,5,7])
+print(c)
+
+c=s.mergeSortedArray([1,5], [2,3])
 print(c)
